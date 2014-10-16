@@ -1,8 +1,6 @@
 survivalguide
 =============
-Basic django app following 
-http://gswd-a-crash-course-pycon-2014.readthedocs.org/
-
+Basic django app 
 
 NOTE: I'm using here Django 1.7 and Python 3.3.
 
