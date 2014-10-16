@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 <head>
-    <title>{% block title %}PyCon Survival Guide{% endblock title %}</title>
+    <title>{% block title %}Web App{% endblock title %}</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style>
         body {
@@ -24,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">PyCon Survival Guide</a>
+          <a class="navbar-brand" href="#">Web App</a>
         </div>
         <div class="navbar-collapse collapse">
             {% if not user.is_authenticated %}
@@ -32,6 +32,7 @@
             <a href="{% url 'login' %}" class="btn btn-default navbar-btn">Login</a>
             {% else %}
             <a href="{% url 'talks:lists:list' %}" class="btn btn-primary navbar-btn">Talk lists</a>
+            <a href="{% url 'estates:elists:list' %}" class="btn btn-primary navbar-btn">Estates</a>
             <a href="{% url 'logout' %}" class="btn btn-default navbar-btn">Logout</a>
             {% endif %}
         </div><!--/.navbar-collapse -->

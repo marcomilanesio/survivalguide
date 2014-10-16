@@ -1,0 +1,25 @@
+{% extends '_layouts/base.html' %}
+
+{% block title %}Estates Lists | {{ block.super }}{% endblock title %}
+
+{% block headline %}<h1>Your Estates</h1>{% endblock headline %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <ul class="list-group">
+            {% for object in object_list %}
+            <li class="list-group-item">
+                <!--<span class="badge">{{ object.estates.count }}</span>-->
+                <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+            </li>
+            {% empty %}
+            <li class="list-group-item">You have no estates</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <p><a href="{% url 'estates:elists:create' %}" class="btn">Create a new list</a></p>
+    </div>
+</div>
+{% endblock %}

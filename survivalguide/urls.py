@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', LogOutView.as_view(), name='logout'),
 
     url(r'^talks/', include('talks.urls', namespace='talks')),
-        
     url(r'^admin/', include(admin.site.urls)),
+
+    
+    url(r'^estates/', include('estates.urls', namespace='estates')),
+    
 )

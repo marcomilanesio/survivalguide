@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse_lazy
 from braces import views
 
 from talks.models import TalkList
+from estates.models import EstateList
 
 from .forms import RegistrationForm, LoginForm
 
@@ -25,6 +26,7 @@ class SignUpView(views.AnonymousRequiredMixin, views.FormValidMessageMixin, gene
     def form_valid(self, form):
         resp = super(SignUpView, self).form_valid(form)
         TalkList.objects.create(user=self.object, name='To Attend')
+        EstateList.objects.create(user=self.object, name='Annonces')
         return resp
 
 
